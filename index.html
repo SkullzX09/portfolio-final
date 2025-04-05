@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+  <!-- AOS for scroll animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Dynamic gradient background for the hero section */
+    #hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center; /* Vertically center content */
+      justify-content: center; /* Horizontally center content */
+      overflow: hidden;
+      background: linear-gradient(120deg, #000000, #0D0D0D, #151515, #1C1C1C); /* Darker gradient colors */
+      background-size: 300% 300%;
+      animation: gradientAnimation 8s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Ensure the hero content is visible on top of the gradient */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Add a subtle glow effect to the hero title and tagline */
+    #hero-title {
+      font-size: 3rem;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+    }
+
+    /* Remove the hero overlay since it's no longer needed */
+    .hero-overlay {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">Pavan Kumaar</a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Dynamic Gradient Background -->
+  <header id="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1 id="hero-title">Hi, I'm Pavan</h1>
+      <p class="tagline">Building decentralized, cutting-edge digital experiences.</p>
+      <a href="#contact" class="btn">Connect With Me</a>
+    </div>
+  </header>
+
+<!-- About Section -->
+<section id="about">
+  <div class="about-background"></div> <!-- Gradient background with circles -->
+  <div class="container about-container">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Hey there, I'm <span class="highlight">Pavan</span>. I've been into tech since I can remember—starting off with <span class="highlight">HTML, CSS, and JavaScript</span> for building websites, then diving into <span class="highlight">Python</span> to tackle backend challenges. Recently, I've been exploring <span class="highlight">smart contract development</span> because I truly believe blockchain has a transformative role to play.
+      </p>
+      <p>
+        One project I'm really excited about is <span class="highlight">LandChain</span>. This isn’t just another digital solution—<b>LandChain is a blockchain-based system built to revolutionize land management</b>. By leveraging blockchain, it ensures transparency, security, and efficiency in property registration and transactions.
+      </p>
+      <p>
+        Oh, and on a personal note, I just finished <span class="highlight">10th grade</span>. Balancing school with tech has been a wild ride, and I'm stoked to see where both paths lead. Thanks for dropping by!
+      </p>
+    </div>
+    <div class="profile-wrapper">
+      <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-img">
+    </div>
+  </div>
+</section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div id="particles-js"></div> <!-- Particles background -->
+    <div class="container">
+      <h2 data-aos="fade-up" class="section-title">My Work</h2>
+      <div class="project-grid">
+        <!-- Project Card 1 -->
+        <div class="project-card" data-tilt data-tilt-max="15" data-tilt-speed="400">
+          <div class="project-image">
+            <img src="assets/images/project-1.jpg" alt="Project One">
+          </div>
+          <div class="project-info">
+            <h3>Project LandChain</h3>
+            <p>An innovative blockchain-based solution with a sleek, modern design.</p>
+            <!-- Updated link -->
+            <a href="https://landchain.in" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </div>
+
+        
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <div id="particles-certifications"></div> <!-- Particles background -->
+    <div class="container">
+      <h2 data-aos="fade-up" class="section-title">My Certifications</h2>
+      <div class="certification-grid">
+        <!-- Certification Card 1 -->
+        <div class="certification-card" data-tilt data-tilt-max="15" data-tilt-speed="400">
+          <div class="certification-image">
+            <img src="assets/images/certification-1.jpg" alt="Python Certification">
+          </div>
+          <div class="certification-info">
+            <h3>Python (Basic) Certification</h3>
+            <p>Got certified in Hackerrank's python basic skill certification.<br> <b> P.S. Still learning because learning never stops :)</p>
+            <a href="https://www.hackerrank.com/certificates/6960b56f7776" class="btn certification-btn" target="_blank" rel="noopener noreferrer">View Certification</a>
+          </div>
+        </div>
+
+        <!-- Certification Card 2 -->
+        <div class="certification-card" data-tilt data-tilt-max="15" data-tilt-speed="400">
+          <div class="certification-image">
+            <img src="assets/images/certification-2.jpg" alt="Frontend certification">
+          </div>
+          <div class="certification-info">
+            <h3>Frontend Developer (React)</h3>
+            <p>Got certified as a Frontend Developer, from Hackerrank's Role Certification Test. <br>I was able to demonstrate efficiency in React, Javascript and CSS during the test.</p>
+            <a href="https://www.hackerrank.com/certificates/iframe/4d081dd7d02c" class="btn certification-btn">View Certification</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div id="vanta-bg"></div>
+    <div class="contact-content">
+      <h1 class="contact-title">Contact Me</h1>
+      <div class="social-icons">
+        <a href="https://x.com/ItzPavanfrr" target="_blank" class="social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/pavankumaar009/" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/SkullzX09" target="_blank" class="social-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Pavan Kumaar. Crafted with passion & my sweat.</p>
+    </div>
+  </footer>
+
+  <!-- External Libraries -->
+  <!-- Vanta.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- VanillaTilt -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+
+  <!-- AOS for scroll animations -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

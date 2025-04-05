@@ -1,0 +1,649 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #0d0d0d;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Navigation */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(13, 13, 13, 0); /* Initially transparent */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#navbar:hover {
+  background: rgba(13, 13, 13, 0.95); /* Becomes visible on hover */
+  transform: translateY(0); /* Ensure it stays in place */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.logo {
+  font-family: "Bonheur Royale", cursive; /* Bonheur Royale font */
+  font-size: 2rem; /* Adjust size for visibility */
+  font-weight: 700; /* Bold weight for emphasis */
+  color: #ffffff; /* Default white color */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Subtle glow effect */
+  text-decoration: none; /* Remove underline */
+  transition: background 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transitions */
+  background: none; /* No background initially */
+  -webkit-background-clip: text; /* Clip the gradient to the text */
+  -webkit-text-fill-color: #ffffff; /* Default white text */
+}
+
+.logo:hover {
+  background: linear-gradient(120deg, #00c6ff, #0072ff, #8e44ad); /* New vibrant gradient */
+  -webkit-background-clip: text; /* Clip the gradient to the text */
+  -webkit-text-fill-color: transparent; /* Make the gradient visible */
+  text-shadow: none; /* Remove glow on hover */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #000000, #0D0D0D, #151515, #1C1C1C); /* Black and dark colors */
+  background-size: 300% 300%;
+  animation: synchronizedGradient 10s ease infinite; /* Shared animation */
+}
+
+.hero-content {
+  text-align: center;
+  color: #ffffff; /* White text for better visibility */
+  padding: 0 1rem;
+}
+
+#hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #f8f8f8; /* Bright white for the title */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7); /* Glow effect */
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  color: #d1e8ff; /* Light blue for the tagline */
+  text-shadow: 0 0 10px rgba(209, 232, 255, 0.8), 0 0 20px rgba(209, 232, 255, 0.6); /* Subtle glow effect */
+}
+
+.btn {
+  display: inline-block;
+  background: transparent; /* Matches the hero section background */
+  color: #ffffff; /* White text for contrast */
+  padding: 0.85rem 1.75rem;
+  text-decoration: none;
+  border: 2px solid #ffffff; /* White border for visibility */
+  border-radius: 50px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Ensure the button stays on top */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background: #ff7eb3; /* Solid pinkish color on hover */
+  color: #0d0d0d; /* Dark text for contrast */
+  border-color: #ff7eb3; /* Match border with background */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 0 20px #ff7eb3, 0 0 30px #ff7eb3; /* Glow effect on hover */
+}
+
+/* Fancy Animation: Pulsating Glow */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 126, 179, 0.3); /* Transparent pink overlay */
+  border-radius: 50px;
+  z-index: -1; /* Place behind the button */
+  opacity: 0;
+  transform: scale(1.5); /* Start larger */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover::after {
+  opacity: 1; /* Make the overlay visible */
+  transform: scale(1); /* Shrink to match the button size */
+  animation: pulseGlow 1.5s infinite; /* Pulsating glow effect */
+}
+
+/* Keyframes for Pulsating Glow */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 126, 179, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 126, 179, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 126, 179, 0.5);
+  }
+}
+
+/* About Section */
+#about {
+  position: relative;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  color: #ffffff; /* White text for contrast */
+  background: linear-gradient(135deg, #000000, #0D0D0D, #151515, #1C1C1C); /* Same gradient as Hero */
+  background-size: 300% 300%;
+  animation: synchronizedGradient 10s ease infinite; /* Shared animation */
+}
+
+/* Floating Circles */
+.about-background::before,
+.about-background::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1); /* Transparent white circles */
+  z-index: -1; /* Place behind the content */
+  animation: float 6s ease-in-out infinite;
+}
+
+.about-background::before {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 8s;
+}
+
+.about-background::after {
+  width: 300px;
+  height: 300px;
+  bottom: 15%;
+  right: 15%;
+  animation-duration: 10s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.about-container {
+  display: flex;
+  align-items: center; /* Vertically align text and image */
+  justify-content: space-between; /* Add space between text and image */
+  gap: 2rem; /* Spacing between text and image */
+  position: relative;
+  z-index: 1;
+}
+
+.about-text {
+  flex: 1; /* Allow text to take up available space */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-family: 'Raleway', sans-serif; /* Elegant font for readability */
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  font-family: 'Raleway', sans-serif; /* Stylish font for the heading */
+  margin-bottom: 1rem;
+  color: #ffffff; /* White text for visibility */
+  font-weight: 700; /* Bold weight for emphasis */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(0, 0, 0, 0.6); /* Glow effect */
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-text .highlight {
+  color: #ffaf7b; /* Highlighted text color */
+  font-weight: bold;
+}
+
+.profile-wrapper {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+  width: 250px;
+  height: 300px;
+  background: linear-gradient(120deg,  #000000, #0D0D0D, #151515, #1C1C1C); /* Gradient border */
+  border-radius: 20px; /* Rounded rectangle shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.profile-wrapper:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8); /* Intensify shadow on hover */
+}
+
+.profile-img {
+  width: 90%; /* Ensure the image fits inside the wrapper */
+  height: 90%;
+  object-fit: cover; /* Ensure the image scales properly */
+  border-radius: 15px; /* Match the rounded rectangle shape */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8); /* Intensify glow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack text and image vertically */
+    text-align: center;
+  }
+
+  .profile-wrapper {
+    margin-top: 2rem; /* Add spacing between text and image */
+  }
+}
+
+/* My Work Section */
+#projects {
+  position: relative;
+  padding: 4rem 2rem;
+  background: #0d0d0d; /* Dark background for contrast */
+  color: #ffffff;
+  overflow: hidden; /* Ensure particles stay within the section */
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place particles behind the content */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for glass effect */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.project-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.project-info h3 {
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.project-info p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 1rem;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(120deg, #ff7eb3, #ff758c);
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-btn:hover {
+  background: linear-gradient(120deg, #ff758c, #ff7eb3);
+  transform: scale(1.05);
+}
+
+/* Certifications Section */
+#certifications {
+  position: relative;
+  padding: 4rem 2rem;
+  background: #0d0d0d; /* Dark background for contrast */
+  color: #ffffff;
+  overflow: hidden; /* Ensure particles stay within the section */
+}
+
+#particles-certifications {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place particles behind the content */
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.certification-card {
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for glass effect */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.certification-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.certification-card:hover .certification-image img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.certification-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.certification-info h3 {
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.certification-info p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 1rem;
+}
+
+.certification-btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(120deg, #ff7eb3, #ff758c);
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.certification-btn:hover {
+  background: linear-gradient(120deg, #ff758c, #ff7eb3);
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+#contact {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #ffffff;
+  text-align: center;
+}
+
+#vanta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the background behind the content */
+}
+
+.contact-content {
+  z-index: 1; /* Ensure content is above the background */
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(0, 0, 0, 0.6); /* Glow effect */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-icon {
+  font-size: 2.5rem;
+  color: #ffffff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ff7eb3; /* Futuristic hover color */
+  transform: scale(1.2); /* Slight zoom effect */
+}
+
+/* Glowing Rings */
+.glowing-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1; /* Place behind the form */
+  pointer-events: none; /* Prevent rings from intercepting mouse events */
+}
+
+.glowing-rings .ring {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: pulseRing 6s infinite ease-in-out;
+}
+
+.glowing-rings .ring:nth-child(1) {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0s;
+}
+
+.glowing-rings .ring:nth-child(2) {
+  top: 50%;
+  left: 50%;
+  animation-delay: 2s;
+}
+
+.glowing-rings .ring:nth-child(3) {
+  top: 70%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+/* Keyframes for Synchronized Gradient Animation */
+@keyframes synchronizedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Footer */
+footer {
+  background: rgba(13, 13, 13, 0.05); /* 95% transparent */
+  color: #999;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack text and image vertically */
+    text-align: center;
+  }
+
+  .profile-wrapper {
+    margin-top: 2rem; /* Add spacing between text and image */
+  }
+
+  .profile-img {
+    margin-top: 0; /* Remove redundant margin */
+  }
+
+  #hero-title {
+    font-size: 3rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .hero-content {
+    padding: 0 1.5rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img {
+    margin-top: 2rem;
+  }
+}
